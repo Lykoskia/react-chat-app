@@ -1,0 +1,28 @@
+body {
+    background-image: linear-gradient(to right, #abc, #cab 100%);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chat-body {
+    background-image: linear-gradient(to right, #cab, #abc 100%);
+}
+
+li {
+    width: fit-content !important;
+}
+
+.user-message {
+    display: flex;
+    justify-content: end;
+    align-self: flex-end !important;
+}
+
+.other-message {
+    display: flex;
+    justify-content: start;
+    align-self: flex-start !important;
+}
