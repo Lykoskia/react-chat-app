@@ -123,7 +123,7 @@ export default function Chat() {
         <MDBListGroupItem
           key={index}
           className={`message ${messageClass} text-${message.username === username ? 'end' : 'start'} mb-2 d-flex justify-content-${message.username === username ? "end" : "start"}`}
-          style={{ backgroundColor: `${message.username === username ? userColor : getInverseColor(userColor)}`, color: `${message.username === username ? textColor : userColor}` }}
+          style={{ backgroundColor: `${message.username === username ? userColor : textColor}`, color: `${message.username === username ? textColor : userColor}` }}
           >
         <div className={`d-flex flex-column justify-content-${message.username === username ? 'end' : 'start'}`}>
           <span className={`fw-bold text-black ${messageClass}`}>{message.username}:</span>
