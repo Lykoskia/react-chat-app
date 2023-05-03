@@ -30,17 +30,17 @@ export default function Chat() {
     return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
   };
 
+  useEffect(() => {
+    setUsername(randomName());
+    setUserColor(randomColor());
+  }, []);
+
   const CLIENT_ID = '2sxe3EkxMn0uTqkz';
   const drone = useMemo(() => new window.Scaledrone(CLIENT_ID, {
     data: {
       name: username,
     },
   }), []);
-
-  useEffect(() => {
-    setUsername(randomName());
-    setUserColor(randomColor());
-  }, []);
 
   const handleMembers = (members) => {
     return setMembers(members);
@@ -123,7 +123,7 @@ export default function Chat() {
         <MDBListGroupItem
           key={index}
           className={`message ${messageClass} text-${message.username === username ? 'end' : 'start'} mb-2 d-flex justify-content-${message.username === username ? "end" : "start"}`}
-          style={{ backgroundColor: `${message.username === username ? userColor : 'gray'}`, color: `${message.username === username ? textColor : 'white'}` }}
+          style={{ backgroundColor: `${message.username === username ? userColor : getInverseColor(userColor)}`, color: `${message.username === username ? textColor : userColor}` }}
           >
         <div className={`d-flex flex-column justify-content-${message.username === username ? 'end' : 'start'}`}>
           <span className={`fw-bold text-black ${messageClass}`}>{message.username}:</span>
@@ -147,7 +147,7 @@ export default function Chat() {
   return (
     <div className='container p-4 d-flex-column align-items-center'>
       <div className='chat-header d-flex align-items-center justify-content-center'>
-        <h2 className='my-4 text-black'>Moj Chat App</h2>
+        <h2 className='my-3 text-black'>Moj Chat App</h2>
       </div>
       <div className='chat-body mb-3 p-5 border border-dark border-3'>
         <MDBListGroup className='mb-3'>{renderMessages()}</MDBListGroup>
