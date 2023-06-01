@@ -150,7 +150,7 @@ export default function Chat() {
         <h2 className='my-3 text-black'>Moj Chat App</h2>
       </div>
       <div className='chat-body mb-3 p-5 border border-dark border-3'>
-        <MDBListGroup className='mb-3'>{renderMessages()}</MDBListGroup>
+        <MDBListGroup className='mb-3 overflow-auto'>{renderMessages()}</MDBListGroup>
         <form onSubmit={handleMessageSubmit}>
           <div className='text-center'>
             <MDBInput className='mb-3 border border-3 border-primary'
