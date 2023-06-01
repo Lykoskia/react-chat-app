@@ -1,7 +1,7 @@
 {
   "name": "seminarski-chat-app",
   "version": "0.1.0",
-  "homepage": "https://Lykoskia.github.io/algebra-seminarski",
+  "homepage": "https://lykoskia.github.io",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
